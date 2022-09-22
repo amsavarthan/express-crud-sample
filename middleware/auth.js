@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
-const config = require("config");
+require("dotenv").config();
 
-const jwtSecret = process.env.JWT_SECRET || config.get("jwtSecret");
+const jwtSecret = process.env.JWT_SECRET;
 
 module.exports = (req, res, next) => {
   try {
@@ -17,10 +17,8 @@ module.exports = (req, res, next) => {
       }
     });
   } catch {
-    return res
-      .status(401)
-      .json({
-        err: { name: "Auth required", msg: "Please login and try again" },
-      });
+    return res.status(401).json({
+      err: { name: "Auth required", msg: "Please login and try again" },
+    });
   }
 };
