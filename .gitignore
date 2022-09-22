@@ -1,0 +1,24 @@
+# dependencies
+/node_modules
+/client/node_modules
+
+# production
+/build
+
+#environment variable
+.env
+
+# misc
+.DS_Store
+/config/production.json
+/config/default.json
+/client/.env.local
+/client/.env.development.local
+/client/.env.test.local
+/client/.env.production.local
+.vscode
+
+# log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
